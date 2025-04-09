@@ -65,3 +65,44 @@ export const getTip = (): string => {
   
   return tips[Math.floor(Math.random() * tips.length)];
 };
+
+// Special quotes about the bond between two people
+export const generateSpecialBondQuote = (name: string): string => {
+  const quotes = [
+    `The stars aligned when Pratik and ${name} met, creating a connection that feels written in the stars.`,
+    `What makes Pratik and ${name}'s bond special is how they understand each other without saying a word.`,
+    `Like two puzzle pieces, Pratik and ${name} just fit together perfectly in ways that can't be explained.`,
+    `Some connections are beyond explanation, and that's exactly what Pratik and ${name} share.`,
+    `The universe works in mysterious ways to bring special people together, just like it did with Pratik and ${name}.`,
+    `When Pratik and ${name} are together, even ordinary moments become extraordinary memories.`,
+    `The way Pratik and ${name} complement each other is like a beautiful harmony that was meant to be.`,
+    `There's a certain magic in the air whenever Pratik and ${name} share the same space.`,
+    `Distance means nothing when the connection between Pratik and ${name} is this strong.`,
+    `Time seems to stand still when Pratik and ${name} are lost in conversation with each other.`
+  ];
+  
+  return quotes[Math.floor(Math.random() * quotes.length)];
+};
+
+// Generate cute nicknames based on user's name
+export const generateNicknames = (name: string): { userNickname: string; myNickname: string } => {
+  const nicknamePrefixes = ["Sweet", "Lovely", "Cutie", "Honey", "Sparkly", "Sunshine", "Angel", "Dreamy", "Star"];
+  const nicknameSuffixes = ["Bean", "Heart", "Cake", "Pie", "Pop", "Boo", "Bug", "Dove", "Petal"];
+  
+  // Get first letter or syllable of names
+  const userInitial = name.charAt(0).toUpperCase();
+  const myInitial = "P"; // for Pratik
+  
+  // Generate random but paired nicknames
+  const randomPrefix = nicknamePrefixes[Math.floor(Math.random() * nicknamePrefixes.length)];
+  const randomSuffix = nicknameSuffixes[Math.floor(Math.random() * nicknameSuffixes.length)];
+  
+  // Create pair of nicknames that go together
+  const pair1 = `${randomPrefix} ${userInitial}${randomSuffix.toLowerCase()}`;
+  const pair2 = `${randomPrefix} ${myInitial}${randomSuffix.toLowerCase()}`;
+  
+  return {
+    userNickname: pair1,
+    myNickname: pair2
+  };
+};
